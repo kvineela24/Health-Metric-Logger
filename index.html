@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEALTH METRIC SYSTEM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1><center>HEALTH METRIC SYSTEM</center></h1>
+    <hr>
+
+    <!-- Top Bar: Search Bar First, Then Add Button -->
+    <div class="top-bar">
+        <input type="text" id="searchBar" onkeyup="searchTable()" placeholder="Search by Patient Name">
+        <button onclick="showForm()">Add</button>
+    </div>
+
+    <!-- Form Section (Hidden by Default) -->
+    <div class="employee-form" id="formContainer" style="display:none;">
+        <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+            <div>
+                <label>Patient Name*</label>
+                <label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                <input type="text" name="fullName" id="fullName">
+            </div>
+            <div>
+                <label>Blood Pressure*</label>
+                <input type="number" name="bloodPressure" id="bloodPressure">
+            </div>
+            <div>
+                <label>Weight*</label>
+                <input type="number" name="weight" id="weight">
+            </div>
+            <div>
+                <label>Date</label>
+                <input type="date" name="date" id="date">
+            </div>
+            <div class="form-action-buttons">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <br/>
+
+    <!-- Table to Display Patient Data -->
+    <div class="employees-table" id="tableContainer">
+        <table class="list" id="employeeList">
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Blood Pressure</th>
+                    <th>Weight</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
